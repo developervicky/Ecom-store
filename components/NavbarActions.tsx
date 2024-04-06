@@ -5,6 +5,7 @@ import Button from "./ui/button";
 import { useEffect, useState } from "react";
 import useCart from "@/hooks/use-cart";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const NavbarActions = () => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
@@ -23,6 +24,9 @@ const NavbarActions = () => {
 
   return (
     <div className="ml-auto flex items-center gap-x-4">
+      <Button className="bg-transparent px-4 py-2 text-sm text-black">
+        <Link href={"https://ecom--admin.vercel.app/"}>Admin</Link>
+      </Button>
       <Button
         onClick={() => router.push("/cart")}
         className="flex items-center px-4 py-2"
